@@ -1,3 +1,13 @@
+const atividade = {
+    nome: 'Almoço',
+    data: new Date("2024-07-08 10:00"),
+}
+
+
+
+
+
+
 const criarItemDeAtividade = () => {
     return `
     
@@ -19,4 +29,4 @@ const criarItemDeAtividade = () => {
 
 const section = document.querySelector('section')
 
-section.innerHTML = ''
+section.innerHTML = criarItemDeAtividade()
