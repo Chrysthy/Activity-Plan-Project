@@ -1,6 +1,7 @@
 const atividade = {
     nome: 'Almoço',
     data: new Date("2024-07-08 10:00"),
+    finalizada: true
 }
 
 
@@ -8,16 +9,30 @@ const atividade = {
 
 
 
-const criarItemDeAtividade = () => {
+const criarItemDeAtividade = (atividade) => {
+
+    let input = '<input type="checkbox" '
+
+    if (atividadeFnalizada) {
+
+        input = input + 'checked'
+
+    }
+
+
+    input = input + '>'
+
+    
+
     return `
     
      <div>
 
-            <input type="checkbox">
+            ${input}
 
-            <span>Academia em grupo</span>
+            <span>${atividade.nome}</span>
 
-            <time>Sábado, 18 de abril às 08:00h</time>
+            <time>${atividade.data}</time>
 
         </div>
     
@@ -29,4 +44,4 @@ const criarItemDeAtividade = () => {
 
 const section = document.querySelector('section')
 
-section.innerHTML = criarItemDeAtividade()
+section.innerHTML = criarItemDeAtividade(atividade)
