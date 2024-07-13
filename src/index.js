@@ -15,6 +15,12 @@ const atividades = [
         nome: 'Academia em grupo',
         data: new Date("2024-07-09 12:00"),
         finalizada: false
+    },
+
+    {
+        nome: 'Gamming session',
+        data: new Date("2024-07-09 18:00"),
+        finalizada: false
     }
 
 
@@ -29,12 +35,12 @@ const criarItemDeAtividade = (atividade) => {
 
     if (atividade.finalizada) {
 
-        input = input + 'checked'
+        input += 'checked'
 
     }
 
 
-    input = input + '>'
+    input += '>'
 
 
 
@@ -58,4 +64,8 @@ const criarItemDeAtividade = (atividade) => {
 
 const section = document.querySelector('section')
 
-section.innerHTML = criarItemDeAtividade(atividade)
+for (let atividade of atividades) {
+
+    section.innerHTML += criarItemDeAtividade(atividade)
+
+}
