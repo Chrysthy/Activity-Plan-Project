@@ -26,7 +26,7 @@ formatador(new Date('2024-04-01'))
 const atividade = {
     nome: 'Almoço',
     data: new Date("2024-07-08 10:00"),
-    finalizada: true
+    finalizada: false
 }
 
 
@@ -57,7 +57,7 @@ const criarItemDeAtividade = (atividade) => {
     
     <input
     
-    onchange="concluirAtividade"
+    onchange="concluirAtividade(event)"
     value="${atividade.data}"
     type="checkbox" `
 
@@ -195,10 +195,12 @@ const criarHorasSelecao = () => {
 
     let horasDisponiveis = ''
 
-    for (let i = 6; i < 23; i++) {
+    for (let i = 0; i <= 23; i++) {
 
-        horasDisponiveis += `<option value="${i}:00">${i}:00</option>`
-        horasDisponiveis += `<option value="${i}:30">${i}:30</option>`
+        const hora = String(i).padStart(2, '0')
+
+        horasDisponiveis += `<option value="${hora}:00">${hora}:00</option>`
+        horasDisponiveis += `<option value="${hora}:30">${hora}:30</option>`
     }
 
     document.querySelector('select[name="hora"]').innerHTML = horasDisponiveis
@@ -208,6 +210,7 @@ const criarHorasSelecao = () => {
 criarHorasSelecao()
 
 
+//concluir
 const concluirAtividade = (event) => {
 
     const input = event.target
