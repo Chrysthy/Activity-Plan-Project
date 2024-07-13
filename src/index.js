@@ -1,6 +1,3 @@
-
-//coleta de dados > processamento > apresentação
-
 //biblioteca
 const formatador = (data) => {
 
@@ -25,13 +22,12 @@ const formatador = (data) => {
 formatador(new Date('2024-04-01'))
 
 
-
+//atividades
 const atividade = {
     nome: 'Almoço',
     data: new Date("2024-07-08 10:00"),
     finalizada: true
 }
-
 
 
 let atividades = [
@@ -53,9 +49,8 @@ let atividades = [
 
 ]
 
-// atividades = []
 
-
+//nova atividade
 const criarItemDeAtividade = (atividade) => {
 
     let input = '<input type="checkbox" '
@@ -94,6 +89,7 @@ const criarItemDeAtividade = (atividade) => {
 }
 
 
+//atualizar atividade
 const atualizarListaDeAtividades = () => {
 
 
@@ -118,11 +114,15 @@ const atualizarListaDeAtividades = () => {
 atualizarListaDeAtividades()
 
 
+//salvar atividade
 const salvarAtividade = (event) => {
+
 
     event.preventDefault()
 }
 
+
+//criar atividades
 const criarDiasSelecao = () => {
 
     const dias = [
@@ -156,4 +156,6 @@ const criarDiasSelecao = () => {
 }
 
 criarDiasSelecao()
+
+
 
